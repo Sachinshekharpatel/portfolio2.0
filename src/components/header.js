@@ -6,7 +6,7 @@ const Header = () => {
   const toggleMenu = () => setShow(!show);
 
   return (
-    <div className="p-2 fixed top-0 mb-[20px] bg-[#050816] w-full">
+    <div className="p-2 cursor-default fixed top-0 mb-[20px] bg-[#050816] w-full">
       <div className="flex p-3 justify-between items-center bg-black-500 text-white">
         <div className="flex items-center">
           <img src={imageLogo} className="w-11 h-11" alt="Logo" />
@@ -215,14 +215,22 @@ const Header = () => {
         </div>
 
         <div className="hidden sm:flex items-center">
-          <h1 className="cursor-pointer ml-3 text-lg text-gray-400 hover:text-white font-semibold">
+          <h1
+            onClick={() =>
+              window.scrollTo({
+                top: 0,
+                behavior: "smooth",
+              })
+            }
+            className="cursor-pointer ml-3 text-lg text-gray-400 hover:text-white font-semibold"
+          >
             About
           </h1>
           <h1
             className="cursor-pointer ml-3 text-lg text-gray-400 hover:text-white font-semibold"
             onClick={() =>
               window.scrollTo({
-                top: window.innerHeight / 2,
+                top: 600,
                 behavior: "smooth",
               })
             }
@@ -233,7 +241,7 @@ const Header = () => {
           <h1
             onClick={() =>
               window.scrollTo({
-                top: (4 * window.innerHeight) / 5,
+                top: document.documentElement.scrollHeight,
                 behavior: "smooth",
               })
             }
