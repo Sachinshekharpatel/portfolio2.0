@@ -1,5 +1,10 @@
+.body {
+  background-color: #050816;
+  cursor: default;
+}
 .App {
   text-align: center;
+
 }
 
 .App-logo {
